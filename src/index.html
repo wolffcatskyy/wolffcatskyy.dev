@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>wolffcatskyy — Open Source Security & Homelab Tools</title>
+  <meta name="description" content="Open-source security tools for CrowdSec, UniFi, and homelab infrastructure. 120k+ IPs blocked across {{FEED_COUNT}} threat feeds. Built by wolffcatskyy.">
+  <meta name="author" content="wolffcatskyy">
+  <meta name="theme-color" content="#0a0a1a">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://wolffcatskyy.dev/">
+  <meta property="og:title" content="wolffcatskyy — Open Source Security & Homelab Tools">
+  <meta property="og:description" content="Open-source security tools for CrowdSec, UniFi, and homelab infrastructure. 120k+ IPs blocked across {{FEED_COUNT}} threat feeds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wolffcatskyy.dev">
+  <meta property="og:site_name" content="wolffcatskyy.dev">
+  <meta property="og:image" content="https://wolffcatskyy.dev/og-image.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="wolffcatskyy — Open Source Security & Homelab Tools">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="wolffcatskyy — Open Source Security & Homelab Tools">
+  <meta name="twitter:description" content="Open-source security tools for CrowdSec, UniFi, and homelab infrastructure. 120k+ IPs blocked across {{FEED_COUNT}} threat feeds.">
+  <meta name="twitter:image" content="https://wolffcatskyy.dev/og-image.webp">
+  <meta name="twitter:image:alt" content="wolffcatskyy — Open Source Security & Homelab Tools">
+  <link rel="icon" type="image/jpeg" href="https://avatars.githubusercontent.com/u/153394885?v=4">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "wolffcatskyy",
+      "url": "https://wolffcatskyy.dev",
+      "sameAs": ["https://github.com/wolffcatskyy"],
+      "knowsAbout": ["Network Security", "CrowdSec", "UniFi", "Homelab", "Linux", "Open Source"]
+    },
+    "name": "wolffcatskyy — Open Source Security & Homelab Tools",
+    "description": "Open-source security tools for CrowdSec, UniFi, and homelab infrastructure.",
+    "url": "https://wolffcatskyy.dev"
+  }
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a1a;--surface:#111128;--surface2:#1a1a3e;--border:#2a2a5a;--text:#e2e8f0;--text2:#94a3b8;--accent:#6366f1;--accent2:#8b5cf6;--accent3:#a78bfa;--glow:rgba(99,102,241,0.15)}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;line-height:1.6;min-height:100vh}
+
+    /* Animated background grid */
+    body::before{content:'';position:fixed;inset:0;background:
+      linear-gradient(rgba(99,102,241,0.03) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(99,102,241,0.03) 1px,transparent 1px);
+      background-size:60px 60px;pointer-events:none;z-index:0}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    /* Hero */
+    .hero{padding:80px 0 60px;text-align:center}
+    .hero-logo{margin-bottom:24px;filter:drop-shadow(0 0 30px rgba(99,102,241,0.3))}
+    .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;background:linear-gradient(135deg,#e2e8f0 0%,#a78bfa 50%,#6366f1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+    .hero .subtitle{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text2);max-width:600px;margin:0 auto 32px}
+
+    /* Links row */
+    .links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+    .links a{color:var(--accent3);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-size:15px;padding:8px 20px;border:1px solid var(--border);border-radius:8px;transition:all 0.2s}
+    .links a:hover{background:var(--glow);border-color:var(--accent);text-decoration-thickness:2px}
+
+    .email-note{color:var(--text2);font-size:14px;margin-top:12px}
+    .email-note a{color:var(--accent3);text-decoration:none}
+
+    /* Stats bar */
+    .stats{display:flex;gap:40px;justify-content:center;padding:32px 0;margin:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .stat{text-align:center}
+    .stat .num{font-size:2rem;font-weight:700;color:var(--accent3);font-variant-numeric:tabular-nums}
+    .stat .label{font-size:13px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
+
+    /* Section headings */
+    .section-title{font-size:1.5rem;font-weight:700;margin:48px 0 24px;display:flex;align-items:center;gap:12px}
+    .section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+    /* Project grid */
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-bottom:64px}
+    .project-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;color:var(--text);transition:all 0.2s;position:relative;overflow:hidden}
+    .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.2s}
+    .project-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,0.1)}
+    .project-card:hover::before{opacity:1}
+    .project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+    .project-header h3{font-size:16px;font-weight:600;font-family:'SF Mono',Consolas,monospace;color:var(--accent3)}
+    .stars{color:var(--text2);font-size:14px;white-space:nowrap}
+    .tagline{font-size:14px;font-weight:500;color:var(--text);margin-bottom:8px}
+    .desc{font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.5}
+    .project-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .lang{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:6px}
+    .lang-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+    .install-cmd{font-size:11px;color:var(--text2);background:var(--bg);padding:4px 10px;border-radius:6px;font-family:'SF Mono',Consolas,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+
+    /* Focus areas */
+    .focus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:64px}
+    .focus-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+    .focus-icon{font-size:2rem;margin-bottom:12px}
+    .focus-card h3{font-size:15px;font-weight:600;margin-bottom:6px}
+    .focus-card p{font-size:13px;color:var(--text2)}
+
+    /* Terminal block */
+    .terminal{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:20px 24px;font-family:'SF Mono',Consolas,monospace;font-size:14px;margin:32px 0;overflow-x:auto}
+    .terminal .prompt{color:#7ee787}
+    .terminal .cmd{color:#e2e8f0}
+    .terminal .comment{color:#8b949e}
+    .terminal .output{color:#8b949e}
+
+    /* Footer */
+    footer{text-align:center;padding:40px 0;color:var(--text2);font-size:13px;border-top:1px solid var(--border)}
+    footer a{color:var(--accent3);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+    .kofi{display:inline-block;color:#000;background:#ff5e5b;font-size:14px;font-weight:700;padding:6px 16px;border-radius:8px;text-decoration:none;margin-top:12px;transition:all 0.2s}
+    .kofi:hover{background:#ff4542;transform:translateY(-1px)}
+
+    /* Responsive */
+    @media(max-width:640px){
+      .hero{padding:48px 0 32px}
+      .stats{gap:24px}
+      .projects{grid-template-columns:1fr}
+      .focus-grid{grid-template-columns:1fr 1fr}
+    }
+
+    /* Smooth scroll */
+    html{scroll-behavior:smooth}
+
+    /* Selection color */
+    ::selection{background:rgba(99,102,241,0.3)}
+  </style>
+</head>
+<body>
+  <main>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-logo"><img src="https://avatars.githubusercontent.com/u/153394885?v=4&s=80" alt="wolffcatskyy" width="80" height="80" fetchpriority="high" decoding="async" style="border-radius:50%;width:80px;height:80px;border:2px solid rgba(255,255,255,0.2);filter:drop-shadow(0 0 30px rgba(99,102,241,0.3))"></div>
+      <h1>wolffcatskyy</h1>
+      <p class="subtitle">Open-source security tools for CrowdSec, UniFi, and homelab infrastructure</p>
+      <div class="links">
+        <a href="https://github.com/wolffcatskyy">GitHub</a>
+        <a href="#projects">Projects</a>
+        <a href="mailto:claude@wolffcatskyy.dev">Contact</a>
+      </div>
+      <p class="email-note">Reach the AI assistant: <a href="mailto:claude@wolffcatskyy.dev">claude@wolffcatskyy.dev</a></p>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><div class="num">{{TOTAL_STARS}}</div><div class="label">Stars</div></div>
+      <div class="stat"><div class="num">{{PROJECT_COUNT}}</div><div class="label">Projects</div></div>
+      <div class="stat"><div class="num">{{FEED_COUNT}}</div><div class="label">Threat Feeds</div></div>
+      <div class="stat"><div class="num">120k+</div><div class="label">IPs Blocked</div></div>
+    </div>
+
+    <div class="terminal">
+      <span class="comment"># Quick start — protect your UniFi network in 60 seconds</span><br>
+      <span class="prompt">$</span> <span class="cmd">pip install git+https://github.com/wolffcatskyy/crowdsec-blocklist-import</span><br>
+      <span class="prompt">$</span> <span class="cmd">crowdsec-blocklist-import --setup</span><br>
+      <span class="output">✓ Connected to CrowdSec LAPI</span><br>
+      <span class="output">✓ {{FEED_COUNT}} threat feeds configured</span><br>
+      <span class="output">✓ 124,847 malicious IPs imported</span>
+    </div>
+
+    <h2 class="section-title" id="projects">Projects</h2>
+    <div class="projects">
+      
+    <a href="https://github.com/wolffcatskyy/smcFanControl" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>smcFanControl CE<span style="background:#10b981;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px">new</span></h3>
+        <div class="stars">★ {{STARS:smcFanControl}}</div>
+      </div>
+      <p class="tagline">Fan control for  Intel Macs</p>
+      <p class="desc">smcFanControl Community Edition. Sleep/wake panic fix, boot-time fan daemon, modern UI. 500KB app bundle (down from 5.7MB).</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#438eff"></span>Objective-C</span>
+        
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/crowdsec-blocklist-import" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>crowdsec-blocklist-import<span style="background:#f59e0b;color:#000;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px">popular</span></h3>
+        <div class="stars">★ {{STARS:crowdsec-blocklist-import}}</div>
+      </div>
+      <p class="tagline">10-20x more blocks for your CrowdSec bouncers</p>
+      <p class="desc">120k+ IPs from {{FEED_COUNT}} free threat feeds. Setup wizard, daemon mode, allowlists, deduplication.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+        <code class="install-cmd">pip install git+https://github.com/wolffcatskyy/crowdsec-blocklist-import</code>
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/crowdsec-unifi-bouncer" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>crowdsec-unifi-bouncer</h3>
+        <div class="stars">★ {{STARS:crowdsec-unifi-bouncer}}</div>
+      </div>
+      <p class="tagline">CrowdSec firewall bouncer for UniFi OS</p>
+      <p class="desc">Install and persist the official bouncer on UDM/UDR with automatic firmware recovery. Sidecar proxy for decision prioritization.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#00ADD8"></span>Go</span>
+        <code class="install-cmd">curl -sSL .../bootstrap.sh | sudo bash</code>
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/gluetun-airvpn-edition" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>gluetun-airvpn-edition</h3>
+        <div class="stars">★ {{STARS:gluetun-airvpn-edition}}</div>
+      </div>
+      <p class="tagline">VPN client container for AirVPN</p>
+      <p class="desc">Fork of qdm12/gluetun — thin Docker container for VPN with WireGuard/OpenVPN, DNS over TLS, and built-in proxy servers.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#00ADD8"></span>Go</span>
+        <code class="install-cmd">docker pull ghcr.io/wolffcatskyy/gluetun-airvpn-edition</code>
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/awesome-unifi" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>awesome-unifi<span style="background:#6366f1;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px">awesome</span></h3>
+        <div class="stars">★ {{STARS:awesome-unifi}}</div>
+      </div>
+      <p class="tagline">Curated list of awesome UniFi resources</p>
+      <p class="desc">Tools, libraries, firmware resources, and community projects for Ubiquiti UniFi networking.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#083fa1"></span>Markdown</span>
+        
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/emby-playback-guardian" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>emby-playback-guardian</h3>
+        <div class="stars">★ {{STARS:emby-playback-guardian}}</div>
+      </div>
+      <p class="tagline">Protect Emby/Jellyfin during active streaming</p>
+      <p class="desc">Pauses library tasks, kills stuck scans, and throttles download clients while you watch.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+        <code class="install-cmd">docker compose up -d</code>
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/awesome-crowdsec" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>awesome-crowdsec<span style="background:#6366f1;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px">awesome</span></h3>
+        <div class="stars">★ {{STARS:awesome-crowdsec}}</div>
+      </div>
+      <p class="tagline">Curated list of awesome CrowdSec resources</p>
+      <p class="desc">Bouncers, integrations, dashboards, and community tools for the CrowdSec ecosystem.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#083fa1"></span>Markdown</span>
+        
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/crowdsec-unifi-suite" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>crowdsec-unifi-suite<span style="background:#10b981;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px">new</span></h3>
+        <div class="stars">★ {{STARS:crowdsec-unifi-suite}}</div>
+      </div>
+      <p class="tagline">One-command CrowdSec + UniFi security stack</p>
+      <p class="desc">Interactive installer for the complete stack: engine, parser, bouncer, sidecar, blocklist import, AbuseIPDB reporting.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#89e051"></span>Shell</span>
+        <code class="install-cmd">curl -sSL .../install.sh | sudo bash</code>
+      </div>
+    </a>
+    <a href="https://github.com/wolffcatskyy/crowdsec-unifi-parser" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-header">
+        <h3>crowdsec-unifi-parser</h3>
+        <div class="stars">★ {{STARS:crowdsec-unifi-parser}}</div>
+      </div>
+      <p class="tagline">CrowdSec parsers for UniFi firewall logs</p>
+      <p class="desc">Parsers and iptables LOG rules for UniFi Dream Machines — get clean, parseable firewall logs from your UDM/UDR.</p>
+      <div class="project-footer">
+        <span class="lang"><span class="lang-dot" style="background:#3572A5"></span>Python</span>
+        
+      </div>
+    </a>
+    </div>
+
+    <h2 class="section-title">Focus Areas</h2>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">🛡️</div>
+        <h3>Network Security</h3>
+        <p>CrowdSec bouncers, threat feeds, and intrusion prevention for UniFi networks</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">🏠</div>
+        <h3>Homelab</h3>
+        <p>Docker stacks, media servers, and self-hosted infrastructure on Synology NAS</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon"></div>
+        <h3>Linux on Mac</h3>
+        <p>Custom kernels and ISOs for running Linux on Apple hardware with full support</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">📋</div>
+        <h3>Awesome Lists</h3>
+        <p>Curated resource collections for CrowdSec, UniFi, and cybersecurity blue teams</p>
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Built with Cloudflare Pages &middot; <a href="https://github.com/wolffcatskyy">wolffcatskyy</a></p>
+      <a href="https://ko-fi.com/wolffcatskyy" target="_blank" rel="noopener noreferrer" class="kofi">&#9749; Support on Ko-fi</a>
+      <p style="margin-top:12px;font-style:italic;color:#8b949e">&ldquo;What does wolffcatskyy mean?&rdquo; &mdash; Nothing. Bitwarden generated it as a random username. It stuck.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animate stats on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.project-card, .focus-card, .stat').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s, transform 0.5s';
+      observer.observe(el);
+    });
+  </script>
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ad9ca6f9d8f44daa1ab89a445683aaf"}'></script>
+</body>
+</html>
