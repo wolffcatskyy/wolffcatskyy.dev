@@ -1,0 +1,27 @@
+# wolffcatskyy.dev
+
+> Developer portfolio for wolffcatskyy — open-source security tools, homelab infrastructure, and macOS utilities.
+
+## About
+
+wolffcatskyy is an open-source developer focused on network security, CrowdSec integrations, UniFi networking, and homelab infrastructure. Projects range from threat feed importers and firewall bouncers to fan control utilities for Intel Macs.
+
+## Pages
+
+- [Home](https://wolffcatskyy.dev/): Project showcase — CrowdSec tools, UniFi bouncers, homelab utilities, and macOS apps.
+- [smcFanControl CE](https://wolffcatskyy.dev/smcfancontrol): Community Edition of smcFanControl. Fan speed control for Intel Macs. Sleep/wake panic fix, boot-time daemon, SF Symbol icon, 500KB bundle (91% smaller than original).
+
+## Projects
+
+- **crowdsec-blocklist-import** — Import 120k+ IPs from {{FEED_COUNT}} free threat feeds into CrowdSec. pip install git+https://github.com/wolffcatskyy/crowdsec-blocklist-import
+- **crowdsec-unifi-bouncer** — CrowdSec firewall bouncer for UniFi Dream Machines (UDM/UDR). Auto-recovers after firmware updates.
+- **smcFanControl CE** — Community fork of smcFanControl. Lightweight fan control for Intel Macs.
+- **gluetun-airvpn-edition** — Thin Docker VPN container fork optimized for AirVPN with WireGuard.
+- **awesome-unifi** — Curated list of UniFi tools, libraries, and community resources.
+- **crowdsec-unifi-suite** — One-command installer for the full CrowdSec + UniFi security stack.
+- **emby-playback-guardian** — Protects Emby/Jellyfin during active streaming by pausing library tasks.
+
+## Contact
+
+- GitHub: https://github.com/wolffcatskyy
+- Security: mailto:security@wolffcatskyy.dev
