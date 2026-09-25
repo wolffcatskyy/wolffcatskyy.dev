@@ -1,0 +1,4 @@
+Contact: mailto:security@wolffcatskyy.dev
+Preferred-Languages: en
+Canonical: https://wolffcatskyy.dev/.well-known/security.txt
+Expires: 2027-03-14T00:00:00.000Z
